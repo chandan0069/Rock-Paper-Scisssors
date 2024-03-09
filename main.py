@@ -1,24 +1,54 @@
-print("Welcome to Treasure Island.")
-print("Your mission is to find the treasure.") 
+print("Welcome to Rock Paper and Scissors.")
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
 
-#https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Treasure%20Island%20Conditional.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1oDe4ehjWZipYRsVfeAx2HyB7LCQ8_Fvi%26export%3Ddownload
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
 
 #Write your code below this line 👇
-choice1 = input("You are at a crossroad, where do you want to go? Type 'left' or 'right'.").lower()
+import random
 
-if(choice1 == 'left'):
-  choice2 = input("You've come to a lake. There is an island in the middle of the lake. Type 'wait' to wait for a boat. Type 'swim' to swim across.").lower()
-  if(choice2 == 'wait'):
-    choice3 = input("You arrived at the island unharmed. There is house with 3 doors. One red, one yellow and one blue. Which color do you choose?").lower()
-    if(choice3 == 'red'):
-      print("It's a room full of fire.\nGame Over")
-    elif(choice3 == 'yellow'):
-      print("You found the treasure!\nYou win!")
-    elif(choice3 == 'blue'):
-      print("You enetered a room of beasts!\nGame Over")
-    else:
-      print("You chose a door that doesn't exist!\nGame Over")
-  else:
-    print("You were attacked by an angry trout.\nGame Over")
+game_image = [rock, paper, scissors]
+user_choice = int(
+    input(
+        "What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"
+    ))
+if user_choice >= 3 or user_choice < 0:
+    print("You typed an invalid number!\nYou lose")
 else:
-  print("You fell into a hole.\nGame Over")
+    print(game_image[user_choice])
+
+    computer_choice = random.randint(0, 2)
+    print(f"Computer chose:\n {game_image[computer_choice]}")
+    if user_choice == 0 and computer_choice == 2:
+        print("You won.")
+    elif user_choice == 2 and computer_choice == 0:
+        print("You lose.")
+    elif user_choice > computer_choice:
+        print("You won.")
+    elif user_choice < computer_choice:
+        print("You won.")
+    elif user_choice == computer_choice:
+        print("It's a draw.")
+      
