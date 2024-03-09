@@ -2,10 +2,6 @@
 
 This Python code implements a classic Rock, Paper, Scissors game where you play against the computer.
 
-How to Play:
-
-Save the code as a Python file (e.g., rock_paper_scissors.py).
-Run the script from your terminal using python rock_paper_scissors.py.
 Gameplay:
 
 The game begins with a welcome message. You'll see visual representations of Rock, Paper, and Scissors for reference.
